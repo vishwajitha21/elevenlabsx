@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* DeliverVault Brand — Light (Vault Ivory) */
+    --bg-primary: 260 30% 98%;
+    --bg-surface: 260 20% 96%;
+    --bg-surface-hover: 260 15% 93%;
+    --ink: 260 40% 8%;
+    --ink-secondary: 260 15% 32%;
+    --ink-tertiary: 260 8% 55%;
+    --accent: 267 85% 58%;
+    --accent-light: 267 100% 95%;
+    --dv-success: 158 72% 28%;
+    --dv-warning: 38 88% 38%;
+    --dv-danger: 0 68% 46%;
+    --border-color: 260 15% 88%;
+
+    /* Shadcn compat tokens */
+    --background: var(--bg-primary);
+    --foreground: var(--ink);
+    --card: var(--bg-surface);
+    --card-foreground: var(--ink);
+    --popover: var(--bg-primary);
+    --popover-foreground: var(--ink);
+    --primary: var(--accent);
+    --primary-foreground: 0 0% 100%;
+    --secondary: var(--bg-surface);
+    --secondary-foreground: var(--ink);
+    --muted: var(--bg-surface);
+    --muted-foreground: var(--ink-tertiary);
+    --accent-bg: var(--accent-light);
+    --accent-foreground: var(--accent);
+    --destructive: var(--dv-danger);
+    --destructive-foreground: 0 0% 100%;
+    --border: var(--border-color);
+    --input: var(--border-color);
+    --ring: var(--accent);
+    --radius: 0.5rem;
+
+    --sidebar-background: var(--bg-surface);
+    --sidebar-foreground: var(--ink-secondary);
+    --sidebar-primary: var(--ink);
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: var(--bg-surface-hover);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--border-color);
+    --sidebar-ring: var(--accent);
+  }
+
+  .dark {
+    /* DeliverVault Brand — Dark (Void Dark) */
+    --bg-primary: 248 22% 5%;
+    --bg-surface: 248 18% 9%;
+    --bg-surface-hover: 248 14% 13%;
+    --ink: 260 25% 95%;
+    --ink-secondary: 260 10% 62%;
+    --ink-tertiary: 260 8% 32%;
+    --accent: 267 100% 75%;
+    --accent-light: 267 60% 18%;
+    --dv-success: 158 72% 36%;
+    --dv-warning: 38 88% 50%;
+    --dv-danger: 0 68% 56%;
+    --border-color: 248 15% 14%;
+
+    --sidebar-background: 248 22% 5%;
+    --sidebar-foreground: 260 10% 62%;
+    --sidebar-primary: 267 100% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 248 14% 13%;
+    --sidebar-accent-foreground: 260 25% 95%;
+    --sidebar-border: 248 15% 14%;
+    --sidebar-ring: 267 100% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+  }
+
+  h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+  }
+}
+
+/* Fluid type scale */
+.text-display {
+  font-size: clamp(36px, 8vw, 96px);
+}
+.text-hero-sub {
+  font-size: clamp(16px, 2.5vw, 24px);
+}
+.text-section {
+  font-size: clamp(28px, 5vw, 64px);
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg,
+    hsl(var(--bg-surface)) 25%,
+    hsl(var(--bg-surface-hover)) 50%,
+    hsl(var(--bg-surface)) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg-primary));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border-color));
+  border-radius: 999px;
+}

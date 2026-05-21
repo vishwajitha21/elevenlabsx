@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeliverVault — Consent-Chained Proposals</title>
+    <meta name="description" content="DeliverVault chains every proposal step through explicit consent. Zero-trust token vaulting. You approve every action." />
+    <meta name="author" content="DeliverVault" />
+
+    <meta property="og:title" content="DeliverVault — Agent Power. Human Control." />
+    <meta property="og:description" content="Consent-chained agent workflows for freelancers. Token Vault security. Every action audited." />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@DeliverVault" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+    <script>
+      (function() {
+        var t = localStorage.getItem('dv-theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
