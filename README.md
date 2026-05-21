@@ -15,6 +15,10 @@ This repository is prepared for **ElevenHacks** (Hack #9: **Stripe**) and includ
 - **Stripe checkout**: generate a secure payment flow once the client signs off.
 - **ElevenLabs narration**: turn proposals/updates into high-quality voice for client-ready updates and social demos.
 
+## About
+
+- Demo: https://delivervault.netlify.app/
+
 ## How it uses Stripe + ElevenLabs
 
 - **Stripe**: used for payments/checkout to ensure the freelancer gets paid after approvals.
@@ -87,4 +91,3 @@ Authenticated route (requires JWT in non-demo mode):
 
 - Record a short viral demo: show proposal creation → approvals → **voice narration** → Stripe checkout.
 - Tag `@stripe` + `@elevenlabsio` and use `#ElevenHacks`.
-
